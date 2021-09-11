@@ -151,3 +151,12 @@ pendingTodo
 comnpleteTodo
  BackTodo　→ テキストが保持されない
  Delete → OK
+
+→　すべて完了Setの値がおかしかっただけだった
+
+残Todo
+　CSSのモジュールをセットすることから続ける
+　ClassNameの記載とCssModule.scssのファイルを利用して適用させる
+　CSSファイルは削除
+
+
