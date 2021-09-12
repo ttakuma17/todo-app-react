@@ -1,20 +1,29 @@
 import React from "react";
-import classes from "./CssModule.scss";
 export const WorkingTodo = (props) => {
-  const { workingTodos, onClickPending, onClickDone } = props;
+  const {
+    workingTodos,
+    onClickPending,
+    onClickDone,
+    todoAreaLayout,
+    listRow,
+    listTitle,
+    listText,
+    button
+  } = props;
   return (
-    <div className={classes.listArea}>
-      <p className={classes.title}>・Working Todo</p>
+    <div style={todoAreaLayout}>
+      <p style={listTitle}>・Working Todo</p>
       <ul>
         {workingTodos.map((todo, index) => {
           return (
             <li key={todo}>
-              <div className={classes.listRow}>
-                <p>{todo}</p>
+              <div style={listRow}>
+                <p style={listText}>{todo}</p>
                 <button
                   onClick={() => {
                     onClickPending(index, "workinglist");
                   }}
+                  style={button}
                 >
                   Pending
                 </button>
@@ -22,6 +31,7 @@ export const WorkingTodo = (props) => {
                   onClick={() => {
                     onClickDone(index);
                   }}
+                  style={button}
                 >
                   Done
                 </button>

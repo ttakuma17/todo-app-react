@@ -1,25 +1,30 @@
 import React from "react";
-import classes from "./CssModule.scss";
 export const IncompleteTodo = (props) => {
   const {
     incompleteTodos,
     onClickWorking,
     onClickPending,
-    onClickDelete
+    onClickDelete,
+    todoAreaLayout,
+    listRow,
+    listTitle,
+    listText,
+    button
   } = props;
   return (
-    <div className={classes.listArea}>
-      <p className={classes.title}>・Todo List</p>
+    <div style={todoAreaLayout}>
+      <p style={listTitle}>・Todo List</p>
       <ul>
         {incompleteTodos.map((todo, index) => {
           return (
             <li key={todo}>
-              <div className={classes.listRow}>
-                <p>{todo}</p>
+              <div style={listRow}>
+                <p style={listText}>{todo}</p>
                 <button
                   onClick={() => {
                     onClickWorking(index, "incompletelist");
                   }}
+                  style={button}
                 >
                   Working
                 </button>
@@ -27,6 +32,7 @@ export const IncompleteTodo = (props) => {
                   onClick={() => {
                     onClickPending(index, "incompletelist");
                   }}
+                  style={button}
                 >
                   Pending
                 </button>
@@ -34,6 +40,7 @@ export const IncompleteTodo = (props) => {
                   onClick={() => {
                     onClickDelete(index, "incompletelist");
                   }}
+                  style={button}
                 >
                   Delete
                 </button>

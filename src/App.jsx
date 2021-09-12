@@ -5,7 +5,6 @@ import { InputTodo } from "./components/InputTodo";
 import { PendingTodo } from "./components/PendingTodo";
 import { WorkingTodo } from "./components/WorkingTodo";
 // import "./styles.css";
-import "./components/CssModule.scss";
 
 export const App = () => {
   const [todoText, setTodoText] = useState("");
@@ -56,11 +55,6 @@ export const App = () => {
       case "incompletelist":
         const newIncompleteTodo = [...incompleteTodo];
         newIncompleteTodo.splice(index, 1);
-        //テスト１
-        console.log(incompleteTodo[index]);
-        //テスト２
-        console.log("入力値テスト");
-        console.log(newIncompleteTodo[index]);
         const newWorkingTodoForIncomplete = [
           ...workingTodo,
           incompleteTodo[index]
@@ -135,37 +129,106 @@ export const App = () => {
         console.log("エラーが発生しています");
     }
   };
-
+  const bodyStyle = {
+    fontFamily: "sans-serif",
+    color: "rgb(23 35 123)"
+  };
+  const headerStyle = {
+    width: "400px",
+    color: "white",
+    borderBottom: "solid 1px",
+    backgroundColor: "rgb(23 35 123)",
+    padding: "10px",
+    fontWeight: "700"
+  };
+  const footerStyle = {
+    backgroundColor: "rgb(23 35 123)",
+    color: "white",
+    width: "400px",
+    padding: "0 10px 0 10px",
+    textAlign: "right"
+  };
+  const todoAreaLayout = {
+    width: "400px",
+    minHeight: "50px",
+    padding: "8px",
+    margin: "8px"
+  };
+  const listRow = {
+    display: "flex",
+    alignItems: "center",
+    paddingBottom: "4px"
+  };
+  const listTitle = {
+    textAlign: "left",
+    borderTop: "double 1px",
+    borderBottom: "double 1px",
+    paddingTop: "3px",
+    paddingBottom: "3px"
+  };
+  const listText = {
+    margin: "0"
+  };
+  const button = {
+    padding: "4px 10px",
+    marginLeft: "5px",
+    color: "rgb(23 35 123)",
+    border: "solid 0.2px",
+    borderRadius: "24px"
+  };
   return (
     <>
-      <header>Manage Your Todo</header>
-      <InputTodo
-        todoText={todoText}
-        onChange={onChangeTodoText}
-        onClick={onClickAdd}
-      />
-      <IncompleteTodo
-        incompleteTodos={incompleteTodo}
-        onClickWorking={onClickWorking}
-        onClickPending={onClickPending}
-        onClickDelete={onClickDelete}
-      />
-      <WorkingTodo
-        workingTodos={workingTodo}
-        onClickPending={onClickPending}
-        onClickDone={onClickDone}
-      />
-      <PendingTodo
-        pendingTodos={pendingTodo}
-        onClickWorking={onClickWorking}
-        onClickBackTodo={onClickBackTodo}
-      />
-      <CompleteTodo
-        completeTodos={completeTodo}
-        onClickBackTodo={onClickBackTodo}
-        onClickDelete={onClickDelete}
-      />
-      <footer>Try to complete todo !</footer>
+      <body style={bodyStyle}>
+        <header style={headerStyle}>Manage Your Todo</header>
+        <InputTodo
+          todoText={todoText}
+          onChange={onChangeTodoText}
+          onClick={onClickAdd}
+          button={button}
+        />
+        <IncompleteTodo
+          incompleteTodos={incompleteTodo}
+          onClickWorking={onClickWorking}
+          onClickPending={onClickPending}
+          onClickDelete={onClickDelete}
+          todoAreaLayout={todoAreaLayout}
+          listRow={listRow}
+          listTitle={listTitle}
+          listText={listText}
+          button={button}
+        />
+        <WorkingTodo
+          workingTodos={workingTodo}
+          onClickPending={onClickPending}
+          onClickDone={onClickDone}
+          todoAreaLayout={todoAreaLayout}
+          listRow={listRow}
+          listTitle={listTitle}
+          listText={listText}
+          button={button}
+        />
+        <PendingTodo
+          pendingTodos={pendingTodo}
+          onClickWorking={onClickWorking}
+          onClickBackTodo={onClickBackTodo}
+          todoAreaLayout={todoAreaLayout}
+          listRow={listRow}
+          listTitle={listTitle}
+          listText={listText}
+          button={button}
+        />
+        <CompleteTodo
+          completeTodos={completeTodo}
+          onClickBackTodo={onClickBackTodo}
+          onClickDelete={onClickDelete}
+          todoAreaLayout={todoAreaLayout}
+          listRow={listRow}
+          listTitle={listTitle}
+          listText={listText}
+          button={button}
+        />
+        <footer style={footerStyle}>Try to complete todo !</footer>
+      </body>
     </>
   );
 };

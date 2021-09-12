@@ -1,20 +1,29 @@
 import React from "react";
-import classes from "./CssModule.scss";
 export const CompleteTodo = (props) => {
-  const { completeTodos, onClickBackTodo, onClickDelete } = props;
+  const {
+    completeTodos,
+    onClickBackTodo,
+    onClickDelete,
+    todoAreaLayout,
+    listRow,
+    listTitle,
+    listText,
+    button
+  } = props;
   return (
-    <div className={classes.listArea}>
-      <p className={classes.title}>・Complete Todo List</p>
+    <div style={todoAreaLayout}>
+      <p style={listTitle}>・Complete Todo List</p>
       <ul>
         {completeTodos.map((todo, index) => {
           return (
             <li key={todo}>
-              <div className={classes.listRow}>
-                <p>{todo}</p>
+              <div style={listRow}>
+                <p style={listText}>{todo}</p>
                 <button
                   onClick={() => {
                     onClickBackTodo(index, "completelist");
                   }}
+                  style={button}
                 >
                   Back Todo
                 </button>
@@ -22,6 +31,7 @@ export const CompleteTodo = (props) => {
                   onClick={() => {
                     onClickDelete(index, "completelist");
                   }}
+                  style={button}
                 >
                   Delete
                 </button>
