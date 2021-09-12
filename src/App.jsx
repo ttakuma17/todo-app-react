@@ -178,7 +178,7 @@ export const App = () => {
   };
   return (
     <>
-      <body style={bodyStyle}>
+      <div style={bodyStyle}>
         <header style={headerStyle}>Manage Your Todo</header>
         <InputTodo
           todoText={todoText}
@@ -228,7 +228,7 @@ export const App = () => {
           button={button}
         />
         <footer style={footerStyle}>Try to complete todo !</footer>
-      </body>
+      </div>
     </>
   );
 };
