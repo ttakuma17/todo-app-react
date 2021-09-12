@@ -4,7 +4,8 @@ import { IncompleteTodo } from "./components/IncompleteTodo";
 import { InputTodo } from "./components/InputTodo";
 import { PendingTodo } from "./components/PendingTodo";
 import { WorkingTodo } from "./components/WorkingTodo";
-import "./styles.css";
+// import "./styles.css";
+import "./components/CssModule.scss";
 
 export const App = () => {
   const [todoText, setTodoText] = useState("");

@@ -1,14 +1,15 @@
 import React from "react";
+import classes from "./CssModule.scss";
 export const CompleteTodo = (props) => {
   const { completeTodos, onClickBackTodo, onClickDelete } = props;
   return (
-    <div class="complete-area">
-      <p class="title">・Complete Todo List</p>
+    <div className={classes.listArea}>
+      <p className={classes.title}>・Complete Todo List</p>
       <ul>
         {completeTodos.map((todo, index) => {
           return (
             <li key={todo}>
-              <div class="list-row">
+              <div className={classes.listRow}>
                 <p>{todo}</p>
                 <button
                   onClick={() => {

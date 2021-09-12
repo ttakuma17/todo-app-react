@@ -1,14 +1,15 @@
 import React from "react";
+import classes from "./CssModule.scss";
 export const PendingTodo = (props) => {
   const { pendingTodos, onClickWorking, onClickBackTodo } = props;
   return (
-    <div class="pending-area">
-      <p class="title">・Pending Todo List</p>
+    <div className={classes.listArea}>
+      <p className={classes.title}>・Pending Todo List</p>
       <ul>
         {pendingTodos.map((todo, index) => {
           return (
             <li key={todo}>
-              <div class="list-row">
+              <div className={classes.listRow}>
                 <p>{todo}</p>
                 <button
                   onClick={() => {

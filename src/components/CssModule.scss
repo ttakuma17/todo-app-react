@@ -5,7 +5,6 @@ body {
   /* background-color:rgb(243 243 250); */
 }
 
-/* 色を整える　　◇風花　　https://ai-create.net/magazine/2017/10/23/colorpatterns/ */
 header {
   width: 400px;
   color: white;
@@ -75,37 +74,9 @@ li {
   /* border-radius: 8px; */
 }
 
-.incompleteArea {
-  /* border-bottom: dashed 1px; */
+.listArea{
   width: 400px;
   min-height: 50px;
-  padding: 8px;
-  margin: 8px;
-  /* border-radius: 8px; */
-}
-
-.workingArea {
-  /* border-bottom: dashed 1px; */
-  width: 400px;
-  min-height: 50px;
-  padding: 8px;
-  margin: 8px;
-  /* border-radius: 8px; */
-}
-
-.pendingArea {
-  /* border-bottom: dashed 1px; */
-  width: 400px;
-  min-height: 50px;
-  padding: 8px;
-  margin: 8px;
-  /* border-radius: 8px; */
-}
-
-.completeArea {
-  /* border-bottom: dashed 1px; */
-  width: 400px;
-  min-height: 100px;
   padding: 8px;
   margin: 8px;
 }

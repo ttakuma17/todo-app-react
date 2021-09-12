@@ -1,5 +1,5 @@
 import React from "react";
-// import classes from "./CssModule.scss";
+import classes from "./CssModule.scss";
 export const IncompleteTodo = (props) => {
   const {
     incompleteTodos,
@@ -8,13 +8,13 @@ export const IncompleteTodo = (props) => {
     onClickDelete
   } = props;
   return (
-    <div className="incomplete-area">
-      <p class="title">・Todo List</p>
+    <div className={classes.listArea}>
+      <p className={classes.title}>・Todo List</p>
       <ul>
         {incompleteTodos.map((todo, index) => {
           return (
             <li key={todo}>
-              <div class="list-row">
+              <div className={classes.listRow}>
                 <p>{todo}</p>
                 <button
                   onClick={() => {
